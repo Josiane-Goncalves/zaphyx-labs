@@ -1,8 +1,3 @@
-/*
-  Zaphyx Labs - Style CSS
-  Identidade visual: tecnológica, premium, escura, neon e moderna.
-  Salve este arquivo como: style.css
-*/
 
 :root {
   --color-bg: #050510;
@@ -76,15 +71,21 @@ img {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(5, 5, 16, 0.82);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--color-border);
+
+  background: rgba(5, 5, 16, 0.72);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.16);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(124, 58, 237, 0.12);
 }
 
 .navbar {
   width: min(1180px, 92%);
   margin: 0 auto;
-  height: 78px;
+  height: 88px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,22 +95,45 @@ img {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  gap: 14px;
 }
 
-.brand-logo,
-.footer-logo {
-  width: 42px;
-  height: 42px;
+.brand-logo {
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  filter: drop-shadow(0 0 12px var(--color-glow-purple));
+
+  padding: 6px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 0 18px rgba(0, 212, 255, 0.22),
+    0 0 28px rgba(124, 58, 237, 0.28);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.07);
+  box-shadow:
+    0 0 24px rgba(0, 212, 255, 0.38),
+    0 0 42px rgba(124, 58, 237, 0.42);
 }
 
 .brand-name {
-  font-size: 1.2rem;
-  background: linear-gradient(135deg, var(--color-text), var(--color-secondary), var(--color-primary-light));
+  font-size: 1.28rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #00d4ff,
+    #7c3aed
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -118,18 +142,37 @@ img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 28px;
 }
 
 .nav-links a {
-  font-size: 0.94rem;
+  position: relative;
   color: var(--color-text-soft);
-  transition: color var(--transition-default), text-shadow var(--transition-default);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #00d4ff, #7c3aed, #ff2bd6);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--color-secondary);
-  text-shadow: 0 0 16px var(--color-glow-blue);
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .menu-toggle {
@@ -152,7 +195,7 @@ img {
 }
 
 main {
-  padding-top: 78px;
+  padding-top: 88px;
 }
 
 .hero-section {
@@ -592,7 +635,8 @@ main {
 }
 
 .footer-brand {
-  max-width: 420px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-brand h2 {
@@ -734,17 +778,6 @@ main {
   }
 }
 
-@media (max-width: 480px) {
-  .brand-name {
-    font-size: 1rem;
-  }
-
-  .brand-logo,
-  .footer-logo {
-    width: 36px;
-    height: 36px;
-  }
-
   .hero-actions {
     align-items: stretch;
   }
@@ -771,4 +804,47 @@ main {
     height: 46px;
     padding: 0 16px;
   }
+
+/* CORREÇÃO FINAL - LOGO HEADER + FOOTER */
+
+.brand-logo,
+.footer-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+
+  padding: 6px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 0 18px rgba(0, 212, 255, 0.22),
+    0 0 28px rgba(124, 58, 237, 0.28);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-logo:hover,
+.footer-logo:hover {
+  transform: scale(1.07);
+  box-shadow:
+    0 0 24px rgba(0, 212, 255, 0.38),
+    0 0 42px rgba(124, 58, 237, 0.42);
+}
+
+@media (max-width: 480px) {
+  .brand-logo,
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+}
+
+/* AJUSTE FINO DO FOOTER */
+.footer-logo {
+  width: 56px;   /* ligeiramente menor que header */
+  height: 56px;
 }
