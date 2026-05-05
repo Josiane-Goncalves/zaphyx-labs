@@ -353,35 +353,53 @@ main {
 }
 
 .service-card {
-  min-height: 260px;
+  position: relative;
+  min-height: 280px;
   border-radius: var(--radius-md);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-    var(--color-bg-card);
+  background: var(--color-bg-card);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid var(--color-border);
   box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
   overflow: hidden;
-  transition: transform var(--transition-default), box-shadow var(--transition-default), background var(--transition-default), border-color var(--transition-default);
+  transition: transform var(--transition-default), box-shadow var(--transition-default), border-color var(--transition-default), filter var(--transition-default);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 16, 0.16) 0%, rgba(5, 5, 16, 0.72) 56%, rgba(5, 5, 16, 0.94) 100%),
+    radial-gradient(circle at top right, rgba(0, 212, 255, 0.18), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(255, 43, 214, 0.2), transparent 38%);
+  transition: opacity var(--transition-default), background var(--transition-default);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.55), rgba(124, 58, 237, 0.2), rgba(255, 43, 214, 0.45)) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-default);
 }
 
 .service-card a {
   position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 260px;
+  min-height: 280px;
   padding: 24px;
-}
-
-.service-card a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.18), transparent 28%),
-    radial-gradient(circle at 90% 10%, rgba(255, 43, 214, 0.14), transparent 32%);
-  opacity: 0;
-  transition: opacity var(--transition-default);
 }
 
 .service-card h3,
@@ -392,32 +410,70 @@ main {
 }
 
 .service-card h3 {
-  font-size: 1.45rem;
+  font-size: 1.48rem;
   margin-bottom: 10px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
 }
 
 .service-card p {
+  max-width: 95%;
   color: var(--color-text-soft);
   line-height: 1.55;
   font-size: 0.95rem;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
 }
 
 .service-card:hover {
-  transform: scale(1.06) translateY(-8px);
-  background: var(--color-bg-card-hover);
-  border-color: rgba(0, 212, 255, 0.38);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 34px var(--color-glow-purple);
+  transform: scale(1.07) translateY(-10px);
+  border-color: rgba(0, 212, 255, 0.42);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55), 0 0 40px var(--color-glow-purple);
+  filter: saturate(1.12) contrast(1.05);
   z-index: 5;
 }
 
-.service-card:hover a::before {
+.service-card:hover::before {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 16, 0.05) 0%, rgba(5, 5, 16, 0.62) 52%, rgba(5, 5, 16, 0.96) 100%),
+    radial-gradient(circle at top right, rgba(0, 212, 255, 0.28), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(255, 43, 214, 0.28), transparent 40%);
+}
+
+.service-card:hover::after {
   opacity: 1;
 }
 
 .service-card-highlight {
-  background:
-    linear-gradient(135deg, rgba(124, 58, 237, 0.72), rgba(255, 43, 214, 0.32)),
-    var(--color-bg-card);
+  background-image:
+    linear-gradient(135deg, rgba(124, 58, 237, 0.68), rgba(255, 43, 214, 0.28)),
+    url('assets/projeto-sob-medida.jpg');
+}
+
+.service-card.site-card {
+  background-image: url('assets/site-profissional.jpg');
+}
+
+.service-card.landing-card {
+  background-image: url('assets/landing-page.jpg');
+}
+
+.service-card.whatsapp-card {
+  background-image: url('assets/whatsapp.jpg');
+}
+
+.service-card.logo-card {
+  background-image: url('assets/logo-marca.jpg');
+}
+
+.service-card.digital-card {
+  background-image: url('assets/presenca-digital.jpg');
+}
+
+.service-card.presentation-card {
+  background-image: url('assets/apresentacoes.jpg');
+}
+
+.service-card.school-card {
+  background-image: url('assets/trabalhos-escolares.jpg');
 }
 
 .service-detail-section {
