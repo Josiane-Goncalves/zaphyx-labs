@@ -1,4 +1,4 @@
-# 🚀 zhaphyx-labs
+# 🚀 zaphyx-labs
 
 ## 📌 Sobre o projeto
 Site institucional da **Zaphyx Labs**, uma empresa de soluções digitais focada em presença online, desenvolvimento web e identidade visual.
