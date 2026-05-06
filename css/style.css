@@ -604,6 +604,46 @@ main {
   color: var(--color-text-muted);
 }
 
+.portfolio-card.zaphyx {
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+
+.portfolio-card.zaphyx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  gap: 16px;
+}
+
+.portfolio-logo {
+  width: 280px;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 18px rgba(124, 58, 237, 0.5));
+}
+
+.portfolio-card.zaphyx h3 {
+  font-size: 1.3rem;
+}
+
+.portfolio-card.zaphyx p {
+  max-width: 260px;
+  color: var(--color-text-soft);
+}
+
+.portfolio-card.zaphyx h3,
+.portfolio-card.zaphyx p {
+  position: relative;
+  z-index: 3;
+}
+
 .cta-section {
   text-align: center;
 }
