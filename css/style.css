@@ -848,3 +848,19 @@ main {
   width: 56px;   /* ligeiramente menor que header */
   height: 56px;
 }
+
+.main-header.scrolled {
+  background: rgba(5, 5, 16, 0.92);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: 0.7s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
