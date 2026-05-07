@@ -37,7 +37,7 @@ O objetivo do projeto é apresentar serviços de forma moderna, com uma interfac
 ---
 
 ## 🌐 Deploy
-Em breve disponível online via Netlify.
+zaphyx-labs.netlify.app
 
 ---
 
