@@ -56,10 +56,15 @@ Josy
  
 ## 📸 Preview do projeto
 
-![Home](assets/screenshots/home.png)
+![Home](assets/screenshots/img01.png)
 
-![Serviços](assets/screenshots/services.png)
+![Serviços](assets/screenshots/img02.png)
 
-![Mobile](assets/screenshots/mobile.png)
+![Chamada](assets/screenshots/img03.png)
+
+![Mobile](assets/screenshots/img04.png)
+
+![CTAmobile](assets/screenshots/img05.png)
+
 
 © 2026 - Todos os direitos reservados.
