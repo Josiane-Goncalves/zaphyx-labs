@@ -53,5 +53,13 @@ Este projeto faz parte da construção do portfólio profissional e da criação
 
 ## 👩‍💻 Autora
 Josy
+ 
+## 📸 Preview do projeto
+
+![Home](assets/screenshots/home.png)
+
+![Serviços](assets/screenshots/services.png)
+
+![Mobile](assets/screenshots/mobile.png)
 
 © 2026 - Todos os direitos reservados.
